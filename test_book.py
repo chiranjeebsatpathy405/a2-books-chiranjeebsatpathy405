@@ -57,6 +57,12 @@ def run_tests():
     print("is_long() test passed!\n")
 
     # TODO: Add more tests, as appropriate
+    # Extra test: string representation
+    print("Test __str__():")
+    assert str(new_book) == "Fish Fingers by Dory, 501 pages, completed"
+    print("__str__() test passed!\n")
+
+    print("🎉 All Book class tests passed successfully!")
 
 
 run_tests()

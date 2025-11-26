@@ -17,10 +17,11 @@ class Book:
         self.author = author
         self.no_of_pages = no_of_pages
         self.is_completed = is_completed
-    def _str_(self) -> str:
-        """Return unread or completed status description of the book """
+
+    def __str__(self) -> str:  # <-- double underscores
+        """Return unread or completed status description of the book."""
         status = "completed" if self.is_completed else "unread"
-        return f"{self.title} by {self.author}, {self.pages} pages, {status}"
+        return f"{self.title} by {self.author}, {self.no_of_pages} pages, {status}"
 
     # --- Status-changing methods (two methods, as required) ---
 
