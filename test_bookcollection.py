@@ -2,7 +2,6 @@
 from book import Book
 from bookcollection import BookCollection
 
-
 def run_tests():
     """Test BookCollection class."""
 
