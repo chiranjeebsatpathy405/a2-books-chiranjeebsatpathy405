@@ -1,2 +1,100 @@
 # TODO: Create the Kivy layout for your BooksToRead app
-BoxLayout:
+<BooksGui>:
+    orientation: "horizontal"
+    padding: 10
+    spacing: 10
+
+    # ---------------- LEFT PANEL: Controls ---------------- #
+    BoxLayout:
+        orientation: "vertical"
+        size_hint_x: 0.4
+        spacing: 10
+
+        Label:
+            text: "Sort by:"
+            size_hint_y: None
+            height: 30
+            font_size: 14
+
+        Spinner:
+            text: "Author"
+            values: root.sort_options
+            size_hint_y: None
+            height: 40
+            on_text: root.update_sort_order(self.text)
+
+        Label:
+            text: "Add book..."
+            size_hint_y: None
+            height: 30
+            font_size: 14
+
+        TextInput:
+            id: title_input
+            hint_text: "Title"
+            multiline: False
+            size_hint_y: None
+            height: 40
+
+        TextInput:
+            id: author_input
+            hint_text: "Author"
+            multiline: False
+            size_hint_y: None
+            height: 40
+
+        TextInput:
+            id: pages_input
+            hint_text: "Pages"
+            multiline: False
+            input_filter: "int"
+            size_hint_y: None
+            height: 40
+
+        Button:
+            text: "Add Book"
+            size_hint_y: None
+            height: 50
+            on_release: root.handle_add_book()
+
+        Button:
+            text: "Clear"
+            size_hint_y: None
+            height: 50
+            on_release: root.clear_read_list()
+
+        Label:
+            text: root.bottom_status_text
+            size_hint_y: None
+            height: 40
+            font_size: 14
+            color: (1,1,1)
+
+        Label:
+            text: root.pages_status_text
+            size_hint_y: None
+            height: 30
+            font_size: 14
+            bold: True
+
+    # ---------------- RIGHT PANEL: Book List ---------------- #
+    BoxLayout:
+        orientation: "vertical"
+        size_hint_x: 0.6
+        spacing: 10
+
+        Label:
+            text: "Pages To Read"
+            size_hint_y: None
+            height: 40
+            font_size: 16
+            bold: True
+
+        ScrollView:
+            GridLayout:
+                id: books_box
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 5
+                padding: 5
