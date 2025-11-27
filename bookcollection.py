@@ -1,4 +1,10 @@
-"""..."""
+"""Book Class
+
+Expected Time - 36 hours
+Actual Time Taken - 20 hours
+GitHub URL: https://github.com/chiranjeebsatpathy405/a2-books-chiranjeebsatpathy405
+
+"""
 
 
 # TODO: Create your BookCollection class in this file
@@ -29,11 +35,11 @@ class BookCollection:
 
     def get_no_of_unread_pages(self) -> int:
         """Return the total number of pages for all unread books."""
-        return sum(book.number_of_pages for book in self.books if not book.is_completed)
+        return sum(book.no_of_pages for book in self.books if not book.is_completed)
 
     def get_no_of_completed_pages(self) -> int:
         """Return the total number of pages for all completed books."""
-        return sum(book.number_of_pages for book in self.books if book.is_completed)
+        return sum(book.no_of_pages for book in self.books if book.is_completed)
 
     # --- Persistence (JSON load/save) ---
 
@@ -45,7 +51,7 @@ class BookCollection:
             Book(
                 title=entry["title"],
                 author=entry["author"],
-                number_of_pages=entry["number_of_pages"],
+                no_of_pages=entry["no_of_pages"],
                 is_completed=entry.get("is_completed", False),
             )
             for entry in books_data
@@ -57,7 +63,7 @@ class BookCollection:
             {
                 "title": book.title,
                 "author": book.author,
-                "no_of_pages": book.number_of_pages,
+                "no_of_pages": book.no_of_pages,
                 "is_completed": book.is_completed,
             }
             for book in self.books

@@ -1,11 +1,15 @@
-"""..."""
+"""Book Class
+Expected Time - 10 hours
+Actual Time Taken - 8 hours
+GitHub URL: https://github.com/chiranjeebsatpathy405/a2-books-chiranjeebsatpathy405
+"""
 
 
 # TODO: Create your Book class in this file
 
 """Represents a single book """
 class Book:
-    def __init__(self, title: str = "", author: str = "", number_of_pages: int = 0, is_completed: bool = False):
+    def __init__(self, title: str = "", author: str = "", no_of_pages: int = 0, is_completed: bool = False):
         """
         Each Book object will keep track of:
             title: Name of the book
@@ -15,13 +19,13 @@ class Book:
         """
         self.title = title
         self.author = author
-        self.number_of_pages = number_of_pages
+        self.no_of_pages = no_of_pages
         self.is_completed = is_completed
 
     def __str__(self) -> str:  # <-- double underscores
         """Return unread or completed status description of the book."""
         status = "completed" if self.is_completed else "unread"
-        return f"{self.title} by {self.author}, {self.number_of_pages} pages, {status}"
+        return f"{self.title} by {self.author}, {self.no_of_pages} pages, {status}"
 
     # --- Status-changing methods (two methods, as required) ---
 
@@ -37,4 +41,4 @@ class Book:
 
     def is_long(self) -> bool:
         """Return True if the book is considered 'long' (>= 500 pages)."""
-        return self.number_of_pages >= 500
+        return self.no_of_pages >= 500

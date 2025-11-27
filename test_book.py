@@ -1,4 +1,12 @@
-"""(Incomplete) Tests for Book class."""
+"""Tested Book Class with empty book and also initializing with title, author, number of pages and is complted
+All Book class tests passed successfully
+
+Expected Time - 10 hours
+Actual Time Taken - 8 hours
+
+GitHub URL: https://github.com/chiranjeebsatpathy405/a2-books-chiranjeebsatpathy405
+
+"""
 from book import Book
 
 
@@ -11,7 +19,7 @@ def run_tests():
     print(repr(default_book))
     assert default_book.title == ""
     assert default_book.author == ""
-    assert default_book.number_of_pages == 0
+    assert default_book.no_of_pages == 0
     assert default_book.is_completed is False
 
     # Test initial-value book
@@ -20,11 +28,11 @@ def run_tests():
     # TODO: Write tests to show this initialisation works
     assert new_book.title == "Fish Fingers"
     assert new_book.author == "Dory"
-    assert new_book.number_of_pages == 501
+    assert new_book.no_of_pages == 501
     assert new_book.is_completed is True
     print("Title:", new_book.title)
     print("Author:", new_book.author)
-    print("Pages:", new_book.number_of_pages)
+    print("Pages:", new_book.no_of_pages)
     print("Completed:", new_book.is_completed)
     print("Initial-value book test passed!\n")
 
